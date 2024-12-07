@@ -1,0 +1,110 @@
+### **Updated README with Build and Run Instructions**
+
+---
+
+## **Installation** 💾
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/ShreyasMehta05/NetFileX.git
+   ```
+
+2. **Navigate to the project directory**:
+   ```bash
+   cd NetFileX
+   ```
+
+3. **Install dependencies**:
+   - Install `gcc` for compiling C code.
+   - Install `mpv` for audio functionality in the client (if not already installed).
+   - For most Linux distributions, install the required packages:
+     ```bash
+     sudo apt update
+     sudo apt install gcc mpv
+     ```
+
+---
+
+## **Build Instructions** 🛠️
+
+### **1. Compile the project using Makefile**:
+
+Run the following command to build the project:
+
+```bash
+make
+```
+
+This will create the following executables in the respective directories:
+- **Naming Server**: `naming_server/main`
+- **Storage Server**: `storage_server/ss`
+- **Client**: `client/client`
+
+---
+
+### **2. Clean up compiled files (optional)**:
+
+To clean up the generated object files and executables, you can run:
+
+```bash
+make clean
+```
+
+This will remove all the compiled executables and intermediate files.
+
+---
+
+## **Running the Executables** 💻
+
+After building the project, you can run the respective components with the required arguments.
+
+### **1. Run the Naming Server**:
+
+```bash
+make run_nm
+```
+
+### **2. Run the Storage Server**:
+
+The **Storage Server** requires three command-line arguments:
+- `<nm_server_port>`: Port of the Naming Server.
+- `<client_port>`: Port for the Storage Server to listen for incoming client connections.
+- `<nm_ip>`: IP address of the Naming Server.
+
+Example command:
+
+```bash
+make run_ss
+```
+
+When prompted, replace `<nm_server_port>`, `<client_port>`, and `<nm_ip>` with appropriate values.
+
+### **3. Run the Client**:
+
+The **Client** requires the **Naming Server IP** as a command-line argument.
+
+Example command:
+
+```bash
+make run_client
+```
+
+When prompted, replace `<naming_server_ip>` with the IP address of the Naming Server.
+
+---
+
+## **Client Functionality** 🎮
+
+The **Client** interacts with the **Naming Server** to perform the following operations:
+
+- **LIST**: List all files available.
+- **READ**: Read the content of a specified file.
+- **WRITE**: Write data to a specified file.
+- **DELETE**: Delete a specified file or folder.
+- **CREATE**: Create a new file or folder.
+- **COPY**: Copy a file from one path to another.
+- **GET**: Retrieve metadata of a file.
+- **AUDIO**: Stream an audio file from the server.
+- **EXIT**: Exit the client application.
+
+---
